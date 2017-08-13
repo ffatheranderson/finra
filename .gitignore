@@ -1,0 +1,6 @@
+*.iml
+.idea/
+/target
+copyJarToGalaxyPizza.sh
+galaxy_pizza_logs
+logs
