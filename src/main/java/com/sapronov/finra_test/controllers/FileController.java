@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.sapronov.finra_test.dao.FileDao;
 import com.sapronov.finra_test.models.SomeFile;
 import com.sapronov.finra_test.services.StorageService;
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -18,9 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.IOException;
 
 /**
  * Created by fa on 08/12/17.
@@ -45,7 +43,7 @@ public class FileController {
                              @RequestParam String someProperty,
                              @RequestParam MultipartFile file) throws IOException {
         if (file.isEmpty())
-            throw new RuntimeException("SomeFile must have to be presented.");
+            throw new RuntimeException("SomeFile must to be presented.");
 
         SomeFile someFileRow = fileDao.createFileRecord(name, someProperty, file.getSize());
         storageService.saveFile(someFileRow.getId(), file.getBytes());
