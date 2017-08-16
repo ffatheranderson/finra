@@ -19,7 +19,7 @@ public class FileDao {
     private EntityManager em;
 
     @Transactional(propagation = Propagation.MANDATORY)
-    public SomeFile createFileRecord(String name, String someProperty, long fileSize) {
+    public SomeFile createFileRecord(String name, String someProperty, Long fileSize) {
         SomeFile newSomeFile = new SomeFile();
         newSomeFile.setCreationTime(new Date());
         newSomeFile.setName(name);

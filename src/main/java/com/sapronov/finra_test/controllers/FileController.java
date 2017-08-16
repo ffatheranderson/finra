@@ -34,7 +34,8 @@ public class FileController {
     @Autowired
     private StorageService storageService;
 
-    private static final String CONTENT_TYPE = "application/octet-stream";
+    public static final String CONTENT_TYPE = "application/octet-stream";
+    public static final String CONTENT_DISPOSITION_HEADER_NAME = "Content-Disposition";
 
     @Transactional
     @RequestMapping(method = RequestMethod.POST)
@@ -74,7 +75,7 @@ public class FileController {
     @RequestMapping("/download")
     public void downloadFile(@RequestParam Long id, HttpServletResponse resp) throws IOException {
         SomeFile file = fileDao.getById(id);
-        resp.setHeader("Content-Disposition", "attachment; filename=" + file.getName());
+        resp.setHeader(CONTENT_DISPOSITION_HEADER_NAME, "attachment; filename=" + file.getName());
         resp.setContentType(CONTENT_TYPE);
         resp.setContentLengthLong(file.getFileSize());
         resp.getOutputStream().write(storageService.getFile(id));
