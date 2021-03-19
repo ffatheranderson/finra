@@ -15,7 +15,7 @@
         <!--<hibernate.version>5.1.0.Final</hibernate.version>-->
         <!--<spring.boot.version>2.0.0.M2</spring.boot.version>-->
         <jstl.version>1.2</jstl.version>
-        <tomcat.version>9.0.33</tomcat.version>
+        <tomcat.version>10.0.4</tomcat.version>
         <apachetiles.version>3.0.7</apachetiles.version>
         <bootstrap.version>3.3.7</bootstrap.version>
         <jquery.version>3.2.0</jquery.version>
