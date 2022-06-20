@@ -22,7 +22,7 @@
         <!--<dataTable.version>1.10.15</dataTable.version>-->
         <webjars-locator.version>0.32-1</webjars-locator.version>
         <jackson-databind.version>2.9.10.3</jackson-databind.version>
-        <mysql.version>5.1.42</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <commons-email.version>1.4</commons-email.version>
         <velocity.version>1.7</velocity.version>
         <slf4j.version>1.7.25</slf4j.version>
